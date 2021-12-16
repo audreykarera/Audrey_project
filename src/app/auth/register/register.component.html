@@ -1,14 +1,56 @@
-<div class="wrapper">
-  <div class="container">
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-icon mat-card-avatar>person_add</mat-icon>
+    <mat-card-title>Learner Registration</mat-card-title>
+    <mat-card-subtitle>Please fill in the following input fields</mat-card-subtitle>
+  </mat-card-header>
 
-    <div class="signup">Sign Up</div>
-    <div class="login">Log In</div>
+  <mat-card-content> 
+    <div class="row">
+      <div class="col">
+        <form>
+          <mat-form-field appearance="outline">
+            <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Name</mat-label>
+            <input matInput placeholder="ex. 'Tristan'">
+          </mat-form-field>
+        </form>
+        <form>
+          <mat-form-field appearance="outline">
+            <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Surname</mat-label>
+            <input matInput placeholder="ex. 'Ogle'">
+          </mat-form-field>
+        </form>
+  
+       </div>
+      <div class="col">
+        <form>
+          <mat-form-field appearance="outline">
+            <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Username</mat-label>
+            <input matInput placeholder="ex. 'user1234'">
+          </mat-form-field>
+        </form>
+        <form>
+          <mat-form-field appearance="outline">
+            <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Password</mat-label>
+            <input matInput placeholder="ex. 'Tristan'">
+          </mat-form-field>
+        </form>
+        <form>
+          <mat-form-field appearance="outline">
+            <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Confirm Password</mat-label>
+            <input matInput placeholder="">
+          </mat-form-field>
+        </form>
 
-     <div class="signup-form">
-        <input type="text" placeholder="Your Email Address" class="input"><br />
-        <input type="text" placeholder="Choose a Username" class="input"><br />
-        <input type="password" placeholder="Choose a Password" class="input"><br />
-        <div class="btn">Create account</div>
-     </div>
-  </div>
-</div>
+         </div>
+    </div>
+
+
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button mat-stroked-button>Save</button>
+      <button mat-raised-button  color="warn">Cancel</button>   
+    </div>
+  </mat-card-actions>
+</mat-card>

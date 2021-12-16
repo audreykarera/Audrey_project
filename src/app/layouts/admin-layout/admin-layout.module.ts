@@ -17,6 +17,8 @@ import { TableListComponent } from './table-list/table-list.component';
 import { TypographyComponent } from './typography/typography.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LearnersComponent } from './learners/learners.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -28,8 +30,10 @@ import { LearnersComponent } from './learners/learners.component';
     MatRippleModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
     MatSelectModule,
     MatTooltipModule,
+    MatIconModule
   ],
   declarations: [
     DashboardComponent,
