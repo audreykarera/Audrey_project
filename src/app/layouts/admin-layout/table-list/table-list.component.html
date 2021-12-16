@@ -1,3 +1,5 @@
+<div>
+    <img src="./assets/logo-only.png" alt="Hello" class="img">
 <div class="main-content">
   <div class="container-fluid">
       <div class="row">
@@ -5,7 +7,7 @@
               <div class="card">
                   <div class="card-header card-header-danger">
                       <h4 class="card-title ">My courses</h4>
-                      <p class="card-category"> Here is a subtitle for this table</p>
+                      <p class="card-category"> Here is a list of all my registered courses and grades</p>
                   </div>
                   <div class="card-body">
                       <div class="table-responsive">
@@ -37,7 +39,7 @@
                                       </td>
                                       <td>
                                         <button mat-icon-button>
-                                          <mat-icon >delete</mat-icon>
+                                          <mat-icon (click)="dialogLogin()">delete</mat-icon>
                                         </button>
                                       </td>
                                   </tr>
@@ -45,84 +47,9 @@
                           </table>
                       </div>
                   </div>
-              </div>
-          </div>
-          <div class="col-md-12">
-              <div class="card card-plain">
-                  <div class="card-header card-header-danger">
-                      <h4 class="card-title mt-0">Learners</h4>
-                      <p class="card-category"> A list of all the registered learners at Inspire Academy</p>
-                  </div>
-                  <div class="card-body">
-                      <div class="table-responsive">
-                          <table class="table table-hover">
-                              <thead class="">
-                                  <th>
-                                      Learner Name
-                                  </th>
-                                  <th>
-                                      Course
-                                  </th>
-                                  <th>
-                                      Centre
-                                  </th>
-                              </thead>
-                              <tbody>
-                                  <tr>
-                                      <td>
-                                          Ryan Gauld
-                                      </td>
-                                      <td>
-                                          Grade 9 Physics
-                                      </td>
-                                      <td>
-                                          Soweto
-                                      </td>
-                                  </tr>
-                              </tbody>
-                          </table>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-12">
-                <div class="card card-plain">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title mt-0">Subjects</h4>
-                        <p class="card-category"> A list of subject offered by Inspire Academy and their related courses</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class="">
-                                    <th>
-                                        Learner Name
-                                    </th>
-                                    <th>
-                                        Course
-                                    </th>
-                                    <th>
-                                        Centre
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            Ryan Gauld
-                                        </td>
-                                        <td>
-                                            Grade 9 Physics
-                                        </td>
-                                        <td>
-                                            Soweto
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+              </div>  
           </div>
       </div>
   </div>
+</div>
 </div>

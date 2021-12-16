@@ -1,3 +1,5 @@
+<div>
+  <img src="./assets/logo-only.png" alt="Hello" class="img">
 <mat-card class="example-card">
   <mat-card-header>
     <mat-icon mat-card-avatar>person_add</mat-icon>
@@ -20,6 +22,26 @@
             <input matInput placeholder="ex. 'Ogle'">
           </mat-form-field>
         </form>
+        <div>
+          <mat-form-field appearance="fill" class="m-2">
+            <mat-label>Are you ?</mat-label>
+            <mat-select (onSelectionChange)="get($event)">
+              <mat-option *ngFor="let item of companies" (click)="get(item)" [value]="item.value">
+                {{item.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <span *ngIf="isSelected">
+            <span *ngIf="Yes">
+              <mat-form-field appearance="fill">
+                <mat-label>School Name</mat-label>
+                <input matInput placeholder="">
+                <mat-icon matSuffix>school</mat-icon>
+                <mat-hint>Enter the name of your School</mat-hint>
+              </mat-form-field>
+            </span>
+          </span>
+        </div>
   
        </div>
       <div class="col">
@@ -41,7 +63,10 @@
             <input matInput placeholder="">
           </mat-form-field>
         </form>
-
+        <form>
+        <mat-label class="col-form-label col-form-label-sm mt-2" for="myfile">Upload parent/gaurdian agreement</mat-label>
+        <input type="file" id="myfile" name="myfile">
+        </form> 
          </div>
     </div>
 
@@ -49,8 +74,9 @@
   </mat-card-content>
   <mat-card-actions>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button mat-stroked-button>Save</button>
-      <button mat-raised-button  color="warn">Cancel</button>   
+      <button mat-stroked-button routerLink="/typography">Save</button>
+      <button mat-raised-button  color="warn" routerLink="/dashboard" >Cancel</button>   
     </div>
   </mat-card-actions>
 </mat-card>
+</div>

@@ -1,98 +1,46 @@
-<div class="main-content">
-  <div class="container-fluid">
-    <div class="card">
-        <div class="card-header card-header-danger">
-            <h4 class="card-title">Material Dashboard Heading</h4>
-            <p class="card-category">Created using Roboto Font Family</p>
+<div>
+    <img src="./assets/logo-only.png" alt="Hello" class="img">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-icon mat-card-avatar>person_add</mat-icon>
+      <mat-card-title>Course Registration</mat-card-title>
+      <mat-card-subtitle>Please fill in the following input fields</mat-card-subtitle>
+    </mat-card-header>
+  
+    <mat-card-content> 
+      <div class="row">
+        <div class="col">
+          <div>
+            <mat-form-field appearance="fill" class="m-2">
+              <mat-label>Student Type</mat-label>
+              <mat-select [(ngModel)]="selectedstudenttype" (selectionChange)="onSelect($event)">
+                <mat-option *ngFor="let item of dropdownList"  [value]="item.value">
+                  {{item.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+         </div>
+        <div class="col">
+         <mat-form-field>
+             <mat-label>Select Subject</mat-label>
+             <mat-select [(ngModel)]="selectedsubject">
+                 <mat-option>None</mat-option>
+                 <mat-option *ngFor="let subject of subjects"  [value]="subject">
+                     {{subject}}
+                 </mat-option>
+             </mat-select>
+         </mat-form-field>    
         </div>
-        <div class="card-body">
-            <div id="typography">
-                <div class="card-title">
-                    <h2>Typography</h2>
-                </div>
-                <div class="row">
-                    <div class="tim-typo">
-                        <h1>
-                            <span class="tim-note">Header 1</span>The Life of Material Dashboard </h1>
-                    </div>
-                    <div class="tim-typo">
-                        <h2>
-                            <span class="tim-note">Header 2</span>The Life of Material Dashboard</h2>
-                    </div>
-                    <div class="tim-typo">
-                        <h3>
-                            <span class="tim-note">Header 3</span>The Life of Material Dashboard</h3>
-                    </div>
-                    <div class="tim-typo">
-                        <h4>
-                            <span class="tim-note">Header 4</span>The Life of Material Dashboard</h4>
-                    </div>
-                    <div class="tim-typo">
-                        <h5>
-                            <span class="tim-note">Header 5</span>The Life of Material Dashboard</h5>
-                    </div>
-                    <div class="tim-typo">
-                        <h6>
-                            <span class="tim-note">Header 6</span>The Life of Material Dashboard</h6>
-                    </div>
-                    <div class="tim-typo">
-                        <p>
-                            <span class="tim-note">Paragraph</span>
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Quote</span>
-                        <blockquote class="blockquote">
-                            <p>
-                                I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.
-                            </p>
-                            <small>
-                                Kanye West, Musician
-                            </small>
-                        </blockquote>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Muted Text</span>
-                        <p class="text-muted">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...
-                        </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Primary Text</span>
-                        <p class="text-primary">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Info Text</span>
-                        <p class="text-info">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Success Text</span>
-                        <p class="text-success">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Warning Text</span>
-                        <p class="text-warning">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...
-                        </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Danger Text</span>
-                        <p class="text-danger">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                    </div>
-                    <div class="tim-typo">
-                        <h2>
-                            <span class="tim-note">Small Tag</span>
-                            Header with small subtitle
-                            <br>
-                            <small>Use "small" tag for the headers</small>
-                        </h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      </div>  
+    </mat-card-content>
+
+    <mat-card-actions>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button mat-stroked-button>Save</button>
+        <button mat-raised-button  color="warn" routerLink="/dashboard" >Cancel</button>   
+      </div>
+    </mat-card-actions>
+  </mat-card>
 </div>
+  
