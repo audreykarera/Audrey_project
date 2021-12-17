@@ -1,6 +1,7 @@
 <div>
   <img src="./assets/logo-only.png" alt="Hello" class="img">
 <mat-card class="example-card">
+  <form [formGroup]="formModel" autocomplete="off" (submit)="onSubmit()">
   <mat-card-header>
     <mat-icon mat-card-avatar>person_add</mat-icon>
     <mat-card-title>Learner Registration</mat-card-title>
@@ -8,20 +9,21 @@
   </mat-card-header>
 
   <mat-card-content>
+
     <div class="row">
       <div class="col">
-        <form>
+
           <mat-form-field appearance="outline">
             <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Name</mat-label>
-            <input matInput placeholder="ex. 'Tristan'">
+            <input matInput placeholder="ex. 'Tristan'" formControlName="FirstName">
           </mat-form-field>
-        </form>
-        <form>
+
+
           <mat-form-field appearance="outline">
-            <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Surname</mat-label>
-            <input matInput placeholder="ex. 'Ogle'">
+            <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall" >Surname</mat-label>
+            <input matInput placeholder="ex. 'Ogle'" formControlName="Surname">
           </mat-form-field>
-        </form>
+
         <div>
           <mat-form-field appearance="fill" class="m-2">
             <mat-label>Are you ?</mat-label>
@@ -44,29 +46,36 @@
         </div>
 
        </div>
-      <div class="col">
-        <form>
+      <div class="col" >
+
           <mat-form-field appearance="outline">
             <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Username</mat-label>
-            <input matInput placeholder="ex. 'user1234'">
+            <input matInput placeholder="ex. 'user1234'" formControlName="Email">
           </mat-form-field>
-        </form>
-        <form>
-          <mat-form-field appearance="outline">
-            <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Password</mat-label>
-            <input matInput placeholder="ex. 'Tristan'">
-          </mat-form-field>
-        </form>
-        <form>
-          <mat-form-field appearance="outline">
-            <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Confirm Password</mat-label>
-            <input matInput placeholder="">
-          </mat-form-field>
-        </form>
-        <form>
+
+          <div formGroupName="Passwords">
+            <mat-form-field appearance="outline">
+              <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall" >Password</mat-label>
+              <input matInput placeholder="ex. 'Tristan'" formControlName="Password">
+              <label class="text-danger" *ngIf="formModel.get('Passwords.Password').touched && formModel.get('Passwords.Password').errors?.required">Field is mandatory.</label>
+              <label class="text-danger" *ngIf="formModel.get('Passwords.Password').touched && formModel.get('Passwords.Password').errors?.minlength">Minimum 4 characters.</label>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Confirm Password</mat-label>
+              <input matInput placeholder="Confirm  Password" formControlName="ConfirmPassword" >
+              <label class="text-danger" *ngIf="formModel.get('Passwords.ConfirmPassword').touched && formModel.get('Passwords.ConfirmPassword').errors?.required">Field is mandatory.</label>
+              <label class="text-danger" *ngIf="formModel.get('Passwords.ConfirmPassword').touched && formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Confirm Password does not match</label>
+
+            </mat-form-field>
+
+          </div>
+
+
+
         <mat-label class="col-form-label col-form-label-sm mt-2" for="myfile">Upload parent/gaurdian agreement</mat-label>
         <input type="file" id="myfile" name="myfile">
-        </form>
+
          </div>
     </div>
 
@@ -74,30 +83,11 @@
   </mat-card-content>
   <mat-card-actions>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button mat-stroked-button routerLink="/typography">Save</button>
-      <button mat-raised-button  color="warn" routerLink="/dashboard" >Cancel</button>
+      <button mat-stroked-button routerLink="/typography"  type="submit"  [disabled]="!formModel.valid">Create</button>
+      <button mat-raised-button  color="warn" type="button" routerLink="/dashboard" >Cancel</button>
     </div>
   </mat-card-actions>
+</form>
 </mat-card>
-    <!-- <div class="signup">Sign Up</div>
-    <div class="login">Log In</div>
-    <form [formGroup]="formModel" autocomplete="off" (submit)="onSubmit()">
-     <div class="signup-form">
-        <input type="text" placeholder="Name"   formControlName="FirstName"  class="input"><br />
-        <input type="text" placeholder="Surname" formControlName="Surname" class="input"><br />
-        <input type="text" placeholder="Email" formControlName="Email" class="input"><br />
-        <div formGroupName="Passwords">
-          <input type="password" placeholder="Choose a Password" formControlName="Password" class="input"><br />
-          <label class="text-danger" *ngIf="formModel.get('Passwords.Password').touched && formModel.get('Passwords.Password').errors?.required">Field is mandatory.</label>
-          <label class="text-danger" *ngIf="formModel.get('Passwords.Password').touched && formModel.get('Passwords.Password').errors?.minlength">Minimum 4 characters.</label>
 
-          <input type="password" placeholder="Choose a Password" formControlName="ConfirmPassword" class="input"><br />
-          <label class="text-danger" *ngIf="formModel.get('Passwords.ConfirmPassword').touched && formModel.get('Passwords.ConfirmPassword').errors?.required">Field is mandatory.</label>
-          <label class="text-danger" *ngIf="formModel.get('Passwords.ConfirmPassword').touched && formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Confirm Password does not match</label>
-
-        </div>
-        <button class="btn" type="submit"  [disabled]="!formModel.valid" >Create account</button>
-     </div>
-     </form>
-  </div> -->
 </div>

@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
     this.formModel = this.fb.group({
       FirstName: ['', Validators.required],
       Surname: ['', Validators.required],
-      Email: ['', Validators.email],
+      Email: ['', Validators.required],
       Passwords: this.fb.group({
         Password: ['', [Validators.required, Validators.minLength(4)]],
         ConfirmPassword: ['', Validators.required]
@@ -55,19 +55,19 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
 
 
-    // if(this.formModel.valid)
-    // {
-    //   this.auth.register(this.formModel.value).subscribe(
-    //     (res: any) => {
-    //         this.formModel.reset();
-    //         this.router.navigate(['/login']);
-    //     },
-    //     err => {
-    //       console.log(err);
-    //     }
-    //   );
+    if(this.formModel.valid)
+    {
+      this.auth.register(this.formModel.value).subscribe(
+        (res: any) => {
+            this.formModel.reset();
+            this.router.navigate(['/login']);
+        },
+        err => {
+          console.log(err);
+        }
+      );
 
-    // }
+    }
 
   }
   comparePasswords(fb: FormGroup) {

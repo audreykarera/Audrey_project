@@ -8,6 +8,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -21,6 +22,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatCardModule
+
   ],
   declarations: [DashboardComponent],
   exports: [
