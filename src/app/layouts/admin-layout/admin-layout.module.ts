@@ -3,7 +3,6 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminLayoutRoutes } from './admin-layout.routing';
-import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
@@ -19,6 +18,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LearnersComponent } from './learners/learners.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+import { AdminDashboardComponent } from './AdminDashboard/AdminDashboard.component';
+import { SharedModule } from 'app/shared/shared.module';
 
 @NgModule({
   imports: [
@@ -33,10 +34,11 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule,
     MatSelectModule,
     MatTooltipModule,
-    MatIconModule
+    MatIconModule,
+    SharedModule
   ],
   declarations: [
-    DashboardComponent,
+    AdminDashboardComponent,
     UserProfileComponent,
     TableListComponent,
     TypographyComponent,

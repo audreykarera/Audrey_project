@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { DashboardComponent } from '../../dashboard/dashboard.component';
+import { AdminDashboardComponent } from './AdminDashboard/AdminDashboard.component';
 import { IconsComponent } from './icons/icons.component';
 import { LearnersComponent } from './learners/learners.component';
 import { MapsComponent } from './maps/maps.component';
@@ -15,7 +16,7 @@ export const AdminLayoutRoutes: Routes = [
       path: '',
       children: [ {
         path: 'dashboard',
-        component: DashboardComponent
+        component: AdminDashboardComponent
     }]}, {
     path: '',
     children: [ {
