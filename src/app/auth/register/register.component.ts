@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 interface company {
-  value: string;
+  value: any;
   viewValue: string;
 }
 @Component({
@@ -15,18 +15,19 @@ interface company {
 export class RegisterComponent implements OnInit {
 
   companies: company[] = [
-    {value: 'Yes', viewValue: 'at a registered school'},
-    {value: 'Supplementary exam', viewValue: 'writing a supplementary exam'}
+    {value: 1, viewValue: 'at a registered school'},
+    {value: 0, viewValue: 'writing a supplementary exam'}
   ];
   isSelected: boolean=false;
   Yes: Boolean | undefined;
 
-  get(data: { value: string; }){
+  get(data: { value: any; }){
     this.isSelected = true;
-    if(data.value == 'Yes'){
+    if(data.value == 1){
       this.Yes = true;
-    } else if(data.value =='Supplementary exam'){
+    } else if(data.value ==0){
       this.isSelected = false;
+      this.formModel.patchValue({ isAtSchool: data.value })
       this.Yes = false;
     }
     else{
@@ -45,6 +46,8 @@ export class RegisterComponent implements OnInit {
       FirstName: ['', Validators.required],
       Surname: ['', Validators.required],
       Email: ['', Validators.required],
+      isAtSchool: ['', Validators.required],
+      SchoolName: ['', Validators.required],
       Passwords: this.fb.group({
         Password: ['', [Validators.required, Validators.minLength(4)]],
         ConfirmPassword: ['', Validators.required]
@@ -54,7 +57,8 @@ export class RegisterComponent implements OnInit {
   }
   onSubmit() {
 
-
+ console.log(this.formModel.valid)
+ console.log(this.formModel.value)
     if(this.formModel.valid)
     {
       this.auth.register(this.formModel.value).subscribe(

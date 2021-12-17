@@ -22,7 +22,9 @@ export class AuthService {
       Username: formData.Email,
       Name: formData.Name,
       Surname: formData.Surname,
-      Password: formData.Passwords.Password
+      Password: formData.Passwords.Password,
+      isAtSchool: formData.isAtSchool,
+      SchoolName: formData.SchoolName,
     };
     return this.http.post(this.BaseURI + '/Register/1', body);
   }

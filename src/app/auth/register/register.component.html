@@ -15,19 +15,19 @@
 
           <mat-form-field appearance="outline">
             <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Name</mat-label>
-            <input matInput placeholder="ex. 'Tristan'" formControlName="FirstName">
+            <input matInput placeholder="ex. 'Tristan'" formControlName="FirstName" required>
           </mat-form-field>
 
 
           <mat-form-field appearance="outline">
             <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall" >Surname</mat-label>
-            <input matInput placeholder="ex. 'Ogle'" formControlName="Surname">
+            <input matInput placeholder="ex. 'Ogle'" formControlName="Surname" required>
           </mat-form-field>
 
         <div>
           <mat-form-field appearance="fill" class="m-2">
             <mat-label>Are you ?</mat-label>
-            <mat-select (onSelectionChange)="get($event)">
+            <mat-select (onSelectionChange)="get($event)" formControlName="isAtSchool" required >
               <mat-option *ngFor="let item of companies" (click)="get(item)" [value]="item.value">
                 {{item.viewValue}}
               </mat-option>
@@ -37,7 +37,7 @@
             <span *ngIf="Yes">
               <mat-form-field appearance="fill">
                 <mat-label>School Name</mat-label>
-                <input matInput placeholder="">
+                <input matInput placeholder="" formControlName="SchoolName" required>
                 <mat-icon matSuffix>school</mat-icon>
                 <mat-hint>Enter the name of your School</mat-hint>
               </mat-form-field>
@@ -56,14 +56,14 @@
           <div formGroupName="Passwords">
             <mat-form-field appearance="outline">
               <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall" >Password</mat-label>
-              <input matInput placeholder="ex. 'Tristan'" formControlName="Password">
+              <input matInput type="password" placeholder="ex. 'Tristan'" formControlName="Password" required>
               <label class="text-danger" *ngIf="formModel.get('Passwords.Password').touched && formModel.get('Passwords.Password').errors?.required">Field is mandatory.</label>
               <label class="text-danger" *ngIf="formModel.get('Passwords.Password').touched && formModel.get('Passwords.Password').errors?.minlength">Minimum 4 characters.</label>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
               <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Confirm Password</mat-label>
-              <input matInput placeholder="Confirm  Password" formControlName="ConfirmPassword" >
+              <input matInput type="password"  placeholder="Confirm  Password" formControlName="ConfirmPassword" required>
               <label class="text-danger" *ngIf="formModel.get('Passwords.ConfirmPassword').touched && formModel.get('Passwords.ConfirmPassword').errors?.required">Field is mandatory.</label>
               <label class="text-danger" *ngIf="formModel.get('Passwords.ConfirmPassword').touched && formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Confirm Password does not match</label>
 
@@ -83,8 +83,8 @@
   </mat-card-content>
   <mat-card-actions>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button mat-stroked-button routerLink="/typography"  type="submit"  [disabled]="!formModel.valid">Create</button>
-      <button mat-raised-button  color="warn" type="button" routerLink="/dashboard" >Cancel</button>
+      <button mat-stroked-button  type="submit"  >Create</button>
+      <button mat-raised-button  color="warn" type="button"  >Cancel</button>
     </div>
   </mat-card-actions>
 </form>
