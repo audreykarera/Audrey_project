@@ -15,6 +15,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { LoginComponent } from './auth/login/login.component';
 import { LazyLoadScriptService } from './services/lazy-load-script.service';
 import { RegisterComponent } from './auth/register/register.component';
+import { LearnerLayoutComponent } from './layouts/learner-layout/learner-layout.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   imports: [
@@ -32,10 +34,13 @@ import { RegisterComponent } from './auth/register/register.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    LearnerLayoutComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+
 
   ],
+
   providers: [LazyLoadScriptService],
   bootstrap: [AppComponent]
 })

@@ -3,14 +3,14 @@
 
     <div class="signup" (click)="register()">Sign Up</div>
     <div class="login">Log In</div>
-
+    <form [formGroup]="formModel" autocomplete="off" (submit)="onSubmit()">
     <div class="login-form">
-        <input type="text" placeholder="Email or Username" class="input"><br />
-        <input type="password" placeholder="Password" class="input"><br />
-        <div class="btn" (click)="login()">log in</div>
+        <input type="text"  formControlName="Email" placeholder="Email or Username" class="input"><br />
+        <input type="password"  formControlName="Password" placeholder="Password" class="input"><br />
+        <button class="btn"  type="submit"  [disabled]="!formModel.valid">log in</button>
         <span><a href="#">I forgot my username or password.</a></span>
      </div>
-
+    </form>
   </div>
 </div>
 

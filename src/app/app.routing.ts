@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent },
 
   {
-    path: "",
+    path: "admin",
     component: AdminLayoutComponent,
     children: [
       {
