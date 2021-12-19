@@ -2,10 +2,13 @@ import { Routes } from '@angular/router';
 
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { AdminDashboardComponent } from './AdminDashboard/AdminDashboard.component';
+import { CentreComponent } from './centre/centre.component';
+import { CourseComponent } from './course/course.component';
 import { IconsComponent } from './icons/icons.component';
 import { LearnersComponent } from './learners/learners.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { SubjectComponent } from './subject/subject.component';
 import { TableListComponent } from './table-list/table-list.component';
 import { TypographyComponent } from './typography/typography.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -55,12 +58,9 @@ export const AdminLayoutRoutes: Routes = [
             component: LearnersComponent
         }]
     },
-    // { path: 'dashboard',      component: DashboardComponent },
-    // { path: 'user-profile',   component: UserProfileComponent },
      { path: 'table-list',     component: TableListComponent },
-    // { path: 'typography',     component: TypographyComponent },
-    // { path: 'icons',          component: IconsComponent },
-    // { path: 'maps',           component: MapsComponent },
-    // { path: 'notifications',  component: NotificationsComponent },
+     { path: 'courses',     component: CourseComponent },
+     { path: 'subjects',     component: SubjectComponent },
+     { path: 'centres',     component: CentreComponent },
 
 ];
