@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 declare var $;
 
 @Injectable({
@@ -25,6 +25,7 @@ export class AuthService {
       Password: formData.Passwords.Password,
       isAtSchool: formData.isAtSchool,
       SchoolName: formData.SchoolName,
+      UserTypeId: formData.UserTypeId,
     };
     console.log(body)
     return this.http.post(this.BaseURI + '/Register/1', body);
@@ -62,10 +63,22 @@ export class AuthService {
   setUserRole(role) {
     sessionStorage.setItem('rle', role.toString());
   }
+
+  setUserType(type) {
+    sessionStorage.setItem('typ', type.toString());
+  }
+  get getUserType () {
+    const id = Number(sessionStorage.getItem('typ'));
+    return id;
+   }
   get getUserRole () {
     const id = Number(sessionStorage.getItem('rle'));
     return id;
    }
+   getTypes():  Observable<any[]> {
+    return this.http.get<any[]>('https://localhost:44318/api/Users/getUserTypes');
+  }
+
 
 }
 

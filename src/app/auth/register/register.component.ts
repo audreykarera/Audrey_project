@@ -14,6 +14,7 @@ interface company {
 })
 export class RegisterComponent implements OnInit {
 
+  userTypes: any[] = [];
   companies: company[] = [
     {value: 1, viewValue: 'at a registered school'},
     {value: 0, viewValue: 'writing a supplementary exam'}
@@ -41,13 +42,14 @@ export class RegisterComponent implements OnInit {
   constructor(private fb: FormBuilder,private router: Router,private auth: AuthService) { }
 
   ngOnInit() {
-
+    this.getUserTypes();
     this.formModel = this.fb.group({
       FirstName: ['', Validators.required],
       Surname: ['', Validators.required],
       Email: ['', Validators.required],
       isAtSchool: ['', Validators.required],
       SchoolName: ['', Validators.required],
+      UserTypeId: ['', Validators.required],
       Passwords: this.fb.group({
         Password: ['', [Validators.required, Validators.minLength(4)]],
         ConfirmPassword: ['', Validators.required]
@@ -73,6 +75,14 @@ export class RegisterComponent implements OnInit {
 
     }
 
+  }
+
+  getUserTypes() {
+
+    this.auth.getTypes().subscribe(res => {
+      console.log(res);
+      this.userTypes =  res;
+    })
   }
   comparePasswords(fb: FormGroup) {
     const confirmPswrdCtrl = fb.get('ConfirmPassword');

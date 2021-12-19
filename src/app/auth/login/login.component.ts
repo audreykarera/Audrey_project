@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
 
        this.auth.setLoggedin(true);
       //  this.toastr.success('You have successfully logged in.', 'Authentication success.', {timeOut: 2222});
-       this.router.navigateByUrl('dashboard'); // error was coming from
+       this.auth.setUserType(res.type)
 
        this.auth.getUserRole == 1? this.router.navigateByUrl('admin/dashboard') : this.router.navigateByUrl('learner/dashboard') ;
 

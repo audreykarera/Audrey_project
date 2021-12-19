@@ -53,6 +53,14 @@
             <input matInput placeholder="ex. 'user1234'" formControlName="Email">
           </mat-form-field>
 
+          <mat-form-field appearance="fill" class="m-2">
+            <mat-label>Student Type</mat-label>
+            <mat-select  formControlName="UserTypeId">
+              <mat-option *ngFor="let item of userTypes"  [value]="item.UserTypeId">
+                {{item.UserTypeDesc}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
           <div formGroupName="Passwords">
             <mat-form-field appearance="outline">
               <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall" >Password</mat-label>
