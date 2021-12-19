@@ -6,7 +6,7 @@
       <mat-card-title>Course Registration</mat-card-title>
       <mat-card-subtitle>Please fill in the following input fields</mat-card-subtitle>
     </mat-card-header>
-
+    <form [formGroup]="registerModel" autocomplete="off" (submit)="onSubmit()">
     <mat-card-content>
       <div class="row">
 
@@ -25,10 +25,10 @@
         <div class="col">
           <mat-form-field>
               <mat-label>Select a Centre</mat-label>
-              <mat-select formControlName="CourseId">
+              <mat-select formControlName="CentreId">
                   <mat-option>None</mat-option>
                   <mat-option *ngFor="let centre of centres"  [value]="centre.CentreId">
-                      {{course.CentreName}}
+                      {{centre.CentreName}}
                   </mat-option>
               </mat-select>
           </mat-form-field>
@@ -38,9 +38,10 @@
 
     <mat-card-actions>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button mat-stroked-button>Save</button>
+        <button mat-stroked-button>Register</button>
         <button mat-raised-button  color="warn" routerLink="/dashboard" >Cancel</button>
       </div>
     </mat-card-actions>
+    </form>
   </mat-card>
 </div>

@@ -21,4 +21,9 @@ export class CourseService {
   getCentres():  Observable<any[]> {
     return this.http.get<any[]>(this.BaseURI  + '/getCentres/');
   }
+
+  register(form): Observable<any> {
+    return this.http.post(this.BaseURI + '/RegisterCourse', form);
+
+  }
 }

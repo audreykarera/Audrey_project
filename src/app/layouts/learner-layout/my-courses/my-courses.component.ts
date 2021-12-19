@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-table-list',
-  templateUrl: './table-list.component.html',
-  styleUrls: ['./table-list.component.css']
+  selector: 'app-courses',
+  templateUrl: './my-courses.component.html',
+  styleUrls: ['./my-courses.component.css']
 })
-export class TableListComponent implements OnInit {
+export class MyCoursesComponent implements OnInit {
 
   constructor(public dialog: MatDialog,) { }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'app/auth/auth.service';
+import { ToastrService } from 'app/services/Toastr.service';
 import { CourseService } from '../services/course.service';
 
 @Component({
@@ -17,35 +18,59 @@ export class RegisterCourseComponent implements OnInit {
   courses: any[] =  [];
   centres: any[] =  [];
 
-
-
-
-
-  dropdownList = [
-    {value: 'Junior', viewValue: 'Junior', subjects: ['Mathjr', 'ICTjr'], courses: ['Grade 6 Math', 'Grade 7 Math']},
-    {value: 'Senior', viewValue: 'Senior', subjects: ['Math', 'ICT', 'Accounting', 'Physics']},
-  ];
   registerModel: FormGroup;
 
 
-  constructor(private course: CourseService, private auth: AuthService, private fb: FormBuilder) { }
+  constructor(private course: CourseService, private auth: AuthService, private fb: FormBuilder, private toast: ToastrService) {
+    this.getCentres();
+    this.getCourses(this.auth.getUserType);
+   }
 
-  onSelect(evt){
-    var selectedList = this.dropdownList.find(list => list.value == this.selectedstudenttype);
-    this.subjects = selectedList.subjects;
-  }
+
 
   ngOnInit() {
 
     this.registerModel = this.fb.group({
       CourseId: ['', Validators.required],
       CentreId: ['', Validators.required],
-      userId: ['', Validators.required],
+      userId: [this.auth.getUserID],
 
     });
 
-    this.getCourses(this.auth.getUserType)
+console.log(this.auth.getUserID)
   }
+
+  onSubmit() {
+
+    console.log(this.registerModel.valid)
+    console.log(this.registerModel.value)
+       if(this.registerModel.valid)
+       {
+         this.registerModel.patchValue({ userId: this.auth.getUserID})
+         this.course.register(this.registerModel.value).subscribe(
+           (res: any) => {
+               this.registerModel.reset();
+               console.log(res)
+               if(res.Message === 'centre')
+               {
+                 this.toast.showNotification('top','right',"can't register on more than one centre",4);
+               } else if(res.Message === 'number') {
+                this.toast.showNotification('top','right',"course is full",4);
+
+               }
+               else {
+                this.toast.showNotification('top','right',"successfully enrolled in the course",1);
+
+               }
+           },
+           err => {
+             console.log(err);
+           }
+         );
+
+       }
+
+     }
 
   getCourses(id) {
     this.course.getCourses(id).subscribe((courses) => {

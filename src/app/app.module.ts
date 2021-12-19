@@ -46,9 +46,7 @@ import { LandingComponent } from './auth/landing/landing.component';
 
 
     AppRoutingModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    })
+
   ],
   declarations: [
     AppComponent,

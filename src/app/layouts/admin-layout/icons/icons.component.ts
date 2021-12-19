@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class IconsComponent implements OnInit {
 
   selectedoption;
-  selectedcentre;
-  selectedcourse;
+  selectedcentre: any;
+  selectedcourse:any;
   options =[];
   dropdownList = [
     {value: 'course specific', viewValue: 'course specific', options: ['Grade 6 Math', 'Grade 7 Math', 'Grade 8 Math', 'Grade 9 Math', 'Grade 10 Math', 'Grade 11 Math', 'Grade 12 Math',
@@ -19,14 +19,14 @@ export class IconsComponent implements OnInit {
     ]},
     {value: 'centre specific', viewValue: 'centre specific', options: ['Bisho 1', 'Bisho 2', 'King Williams Town', 'Soweto']},
   ];
- 
- 
+
+
   constructor() { }
 
   onSelect(evt){
     var selectedList = this.dropdownList.find(list => list.value == this.selectedoption);
     this.options = selectedList.options;
-    
+
   }
 
   ngOnInit() {

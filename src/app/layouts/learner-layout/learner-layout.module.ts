@@ -15,7 +15,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatCardModule } from "@angular/material/card";
 import { MatIconModule } from "@angular/material/icon";
 import { SharedModule } from "app/shared/shared.module";
-import { TableListComponent } from "./table-list/table-list.component";
+import { MyCoursesComponent } from "./my-courses/my-courses.component";
 import { RegisterCourseComponent } from "./register-course/register-course.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 
@@ -37,7 +37,7 @@ import { UserProfileComponent } from "./user-profile/user-profile.component";
   ],
   declarations: [
     LearnerDashboardComponent,
-    TableListComponent,
+    MyCoursesComponent,
     RegisterCourseComponent,
     UserProfileComponent
   ],
