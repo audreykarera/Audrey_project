@@ -25,6 +25,7 @@ import { LazyLoadScriptService } from './services/lazy-load-script.service';
 import { RegisterComponent } from './auth/register/register.component';
 import { LearnerLayoutComponent } from './layouts/learner-layout/learner-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LandingComponent } from './auth/landing/landing.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatToolbarModule,
     MatCardModule,
 
-    
+
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
@@ -55,6 +56,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LearnerLayoutComponent,
     LoginComponent,
     RegisterComponent,
+    LandingComponent
 
 
   ],
