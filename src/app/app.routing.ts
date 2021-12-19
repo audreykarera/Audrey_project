@@ -11,11 +11,13 @@ import { RegisterComponent } from "./auth/register/register.component";
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "login",
+    redirectTo: "landing",
     pathMatch: "full",
   },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
+  { path: "landing", component: RegisterComponent },
+
 
   {
     path: "admin",
