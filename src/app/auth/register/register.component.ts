@@ -29,6 +29,7 @@ export class RegisterComponent implements OnInit {
     } else if(data.value ==0){
       this.isSelected = false;
       this.formModel.patchValue({ isAtSchool: data.value })
+      this.formModel.patchValue({ SchoolName: data.value })
       this.Yes = false;
     }
     else{
