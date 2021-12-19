@@ -26,6 +26,7 @@ export class AuthService {
       isAtSchool: formData.isAtSchool,
       SchoolName: formData.SchoolName,
     };
+    console.log(body)
     return this.http.post(this.BaseURI + '/Register/1', body);
   }
 
