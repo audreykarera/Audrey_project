@@ -1,6 +1,9 @@
 import { MapsComponent } from '../../admin-layout/maps/maps.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DeregisterCourseDialogComponent } from '../modals/deregister-course-dialog/deregister-course-dialog.component';
+import { CourseService } from '../services/course.service';
+import { AuthService } from 'app/auth/auth.service';
 
 @Component({
   selector: 'app-courses',
@@ -9,9 +12,19 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 })
 export class MyCoursesComponent implements OnInit {
 
-  constructor(public dialog: MatDialog,) { }
+  myCourses: any[] = [];
+  constructor(public dialog: MatDialog, private courses: CourseService, private auth: AuthService) { }
 
   ngOnInit() {
+    const id =  this.auth.getUserID;
+    this.getMyCourses(id);
+  }
+
+  getMyCourses(id: number){
+        this.courses.getMyCourses(id).subscribe(data => {
+           console.log(data);
+           this.myCourses =  data;
+        })
   }
 
   dialogLogin() {
@@ -21,9 +34,15 @@ export class MyCoursesComponent implements OnInit {
     dialog.height = 'auto';
     dialog.data = { add: 'yes' }
     const dialogReference = this.dialog.open(
-      MapsComponent,
+      DeregisterCourseDialogComponent,
       dialog
     );
+  }
+
+  holder(text) {
+    if(text ==null) {
+      return "No data available"
+    }
   }
 
 }

@@ -6,7 +6,8 @@
           <div class="col-md-12">
               <div class="card">
                   <div class="card-header card-header-danger">
-                      <h4 class="card-title ">My courses</h4>
+                      <h4 class="card-title ">My courses - {{this.myCourses[0].Centre}}</h4>
+
                       <p class="card-category"> Here is a list of all my registered courses and grades</p>
                   </div>
                   <div class="card-body">
@@ -27,27 +28,29 @@
                                   </th>
                               </thead>
                               <tbody>
-                                  <tr>
-                                      <td>
-                                          Grade 8 Accounting
-                                      </td>
-                                      <td>
-                                         64%
-                                      </td>
-                                      <td>
-                                          You need to spend more time on balance sheets
-                                      </td>
-                                      <td>
+
+                                  <tr *ngFor="let courses of myCourses">
+                                    <td>
+                                      <div>{{ courses.Course }}</div>
+                                    </td>
+                                    <td class="text-center">
+                                      <div>{{ holder(courses.Marks) }}</div>
+                                    </td>
+                                    <td>
+                                      {{ holder(courses.Comments) }}
+                                    </td>
+                                    <td>
                                         <button mat-icon-button>
-                                          <mat-icon (click)="dialogLogin()">delete</mat-icon>
-                                        </button>
-                                      </td>
+                                            <mat-icon (click)="dialogLogin()">delete</mat-icon>
+                                          </button>
+                                    </td>
                                   </tr>
+
                               </tbody>
                           </table>
                       </div>
                   </div>
-              </div>  
+              </div>
           </div>
       </div>
   </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'app/auth/auth.service';
 import { ToastrService } from 'app/services/Toastr.service';
 import { CourseService } from '../services/course.service';
@@ -21,7 +22,7 @@ export class RegisterCourseComponent implements OnInit {
   registerModel: FormGroup;
 
 
-  constructor(private course: CourseService, private auth: AuthService, private fb: FormBuilder, private toast: ToastrService) {
+  constructor(private course: CourseService, private auth: AuthService, private fb: FormBuilder, private toast: ToastrService, private router: Router) {
     this.getCentres();
     this.getCourses(this.auth.getUserType);
    }
@@ -62,6 +63,7 @@ console.log(this.auth.getUserID)
                 this.toast.showNotification('top','right',"successfully enrolled in the course",1);
 
                }
+               this.router.navigateByUrl('../learner/my-courses');
            },
            err => {
              console.log(err);
