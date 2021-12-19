@@ -27,6 +27,7 @@ export class AuthService {
       SchoolName: formData.SchoolName,
       UserTypeId: formData.UserTypeId,
     };
+    console.log(body)
     return this.http.post(this.BaseURI + '/Register/1', body);
   }
 

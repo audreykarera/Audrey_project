@@ -13,12 +13,12 @@ export class LoginComponent implements OnInit {
 
   formModel: FormGroup;
 
-  constructor(    private lazyLoadService: LazyLoadScriptService, private router: Router,private fb: FormBuilder,private auth: AuthService) { }
+  constructor(private lazyLoadService: LazyLoadScriptService, private router: Router,private fb: FormBuilder,private auth: AuthService) { }
 
   ngOnInit() {
-    if (sessionStorage.getItem('id') != null) { // but must be != null
-      this.router.navigateByUrl('/dashboard');
-    }
+    // if (sessionStorage.getItem('id') != null) { // but must be != null
+    //   this.router.navigateByUrl('/dashboard');
+    // }
     this.formModel = this.fb.group({
       Email: ['', Validators.required],
       Password: ['', Validators.required],
@@ -66,7 +66,6 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-
 
   register() {
     this.router.navigate(['register']);

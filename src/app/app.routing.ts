@@ -1,3 +1,4 @@
+import { LandingComponent } from './auth/landing/landing.component';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
@@ -16,7 +17,7 @@ const routes: Routes = [
   },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  { path: "landing", component: RegisterComponent },
+  { path: "landing", component: LandingComponent },
 
 
   {
