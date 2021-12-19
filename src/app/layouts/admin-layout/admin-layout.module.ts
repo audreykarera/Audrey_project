@@ -12,9 +12,6 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
-import { TableListComponent } from './table-list/table-list.component';
-import { TypographyComponent } from './typography/typography.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LearnersComponent } from './learners/learners.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
@@ -39,9 +36,6 @@ import { SharedModule } from 'app/shared/shared.module';
   ],
   declarations: [
     AdminDashboardComponent,
-    UserProfileComponent,
-    TableListComponent,
-    TypographyComponent,
     IconsComponent,
     MapsComponent,
     NotificationsComponent,

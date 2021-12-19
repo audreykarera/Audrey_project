@@ -1,4 +1,4 @@
-import { MapsComponent } from './../maps/maps.component';
+import { MapsComponent } from '../../admin-layout/maps/maps.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
