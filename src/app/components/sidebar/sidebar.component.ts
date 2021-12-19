@@ -19,6 +19,9 @@ export const ROUTES: RouteInfo[] = [
     { path: '/admin/maps', title: 'Maps',  icon:'location_on', class: '' ,role: 1},
     { path: '/admin/notifications', title: 'Notifications',  icon:'notifications', class: '' ,role: 1},
     { path: '/admin/learners', title: 'Learners',  icon:'notifications', class: '' ,role: 1},
+    { path: '/admin/courses', title: 'Course',  icon:'notifications', class: '' ,role: 1},
+    { path: '/admin/subjects', title: 'Subjects',  icon:'notifications', class: '' ,role: 1},
+    { path: '/admin/centres', title: 'Centres',  icon:'notifications', class: '' ,role: 1},
 
 
 
