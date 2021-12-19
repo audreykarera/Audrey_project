@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 import { LearnerDashboardComponent } from './LearnerDashboard/LearnerDashboard.component';
 import { TableListComponent } from './table-list/table-list.component';
-import { TypographyComponent } from './typography/typography.component';
+import { RegisterCourseComponent } from './register-course/register-course.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
@@ -24,8 +24,8 @@ export const LearnerLayoutRoutes: Routes = [
     }, {
         path: '',
         children: [ {
-            path: 'typography',
-            component: TypographyComponent
+            path: 'register',
+            component: RegisterCourseComponent
         }]
     },
     { path: 'table-list',     component: TableListComponent },

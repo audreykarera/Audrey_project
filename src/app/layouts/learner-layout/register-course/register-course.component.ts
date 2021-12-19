@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-typography',
-  templateUrl: './typography.component.html',
-  styleUrls: ['./typography.component.css']
+  selector: 'app-register-course',
+  templateUrl: './register-course.component.html',
+  styleUrls: ['./register-course.component.css']
 })
-export class TypographyComponent implements OnInit {
+export class RegisterCourseComponent implements OnInit {
 
   selectedstudenttype;
   selectedsubject;
@@ -16,8 +16,8 @@ export class TypographyComponent implements OnInit {
     {value: 'Junior', viewValue: 'Junior', subjects: ['Mathjr', 'ICTjr'], courses: ['Grade 6 Math', 'Grade 7 Math']},
     {value: 'Senior', viewValue: 'Senior', subjects: ['Math', 'ICT', 'Accounting', 'Physics']},
   ];
- 
- 
+
+
   constructor() { }
 
   onSelect(evt){

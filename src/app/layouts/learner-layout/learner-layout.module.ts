@@ -16,7 +16,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatIconModule } from "@angular/material/icon";
 import { SharedModule } from "app/shared/shared.module";
 import { TableListComponent } from "./table-list/table-list.component";
-import { TypographyComponent } from "./typography/typography.component";
+import { RegisterCourseComponent } from "./register-course/register-course.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 
 @NgModule({
@@ -38,7 +38,7 @@ import { UserProfileComponent } from "./user-profile/user-profile.component";
   declarations: [
     LearnerDashboardComponent,
     TableListComponent,
-    TypographyComponent,
+    RegisterCourseComponent,
     UserProfileComponent
   ],
 })
