@@ -82,7 +82,7 @@
 
 
         <mat-label class="col-form-label col-form-label-sm mt-2" for="myfile">Upload parent/gaurdian agreement</mat-label>
-        <input type="file" id="myfile" name="myfile">
+        <input  type="file" id="FileInput" class="form-control-file" #Docs (change)="handleFileInput($event)" multiple="multiple">
 
          </div>
     </div>
@@ -92,7 +92,7 @@
   <mat-card-actions>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
       <button mat-stroked-button  type="submit"  >Create</button>
-      
+
     </div>
   </mat-card-actions>
 </form>

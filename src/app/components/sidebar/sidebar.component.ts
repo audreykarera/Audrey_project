@@ -40,9 +40,9 @@ export class SidebarComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem.role == this.authService.getUserRole);
+    //this.menuItems = ROUTES.filter(menuItem => menuItem.role == this.authService.getUserRole);
 
-    // this.menuItems = ROUTES.filter(menuItem => menuItem.role ==1);
+     this.menuItems = ROUTES.filter(menuItem => menuItem.role ==1);
 
   }
   isMobileMenu() {

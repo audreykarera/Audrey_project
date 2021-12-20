@@ -26,6 +26,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { LearnerLayoutComponent } from './layouts/learner-layout/learner-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LandingComponent } from './auth/landing/landing.component';
+import { DocumentService } from './shared/Document.service';
 
 @NgModule({
   imports: [
@@ -59,7 +60,7 @@ import { LandingComponent } from './auth/landing/landing.component';
 
   ],
 
-  providers: [LazyLoadScriptService],
+  providers: [LazyLoadScriptService,DocumentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

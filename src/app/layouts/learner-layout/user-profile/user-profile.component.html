@@ -8,33 +8,39 @@
                       <p class="card-category">Complete your profile</p>
                   </div>
                   <div class="card-body">
-                      <form>
+                    <form [formGroup]="profileModel" autocomplete="off" (submit)="onSubmit()">
+
                           <div class="row">
                               <div class="col-md-5">
                                 <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Company (disabled)" disabled>
+                                    <input matInput placeholder="(disabled)" disabled>
                                   </mat-form-field>
                               </div>
                               <div class="col-md-3">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Username">
+                                    <input matInput placeholder="Username"  formControlName="Username" disabled>
                                   </mat-form-field>
                               </div>
                               <div class="col-md-4">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Email address" type="email">
-                                  </mat-form-field>
+                                <mat-form-field class="example-full-width" class="m-2">
+                                  <mat-label>Student Type</mat-label>
+                                  <mat-select  formControlName="type">
+                                    <mat-option *ngFor="let item of userTypes"  [value]="item.UserTypeId">
+                                      {{item.UserTypeDesc}}
+                                    </mat-option>
+                                  </mat-select>
+                                </mat-form-field>
                               </div>
                           </div>
                           <div class="row">
                               <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Fist Name" type="text">
+                                  <input matInput  formControlName="FirstName" placeholder="Fist Name" type="text">
                                 </mat-form-field>
                               </div>
                               <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Last Name" type="text">
+                                  <input matInput  formControlName="Surname" placeholder="Last Name" type="text">
                                 </mat-form-field>
                               </div>
                           </div>
@@ -45,7 +51,7 @@
                                 </mat-form-field>
                               </div>
                           </div>
-                          <div class="row">
+                          <!-- <div class="row">
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
                                   <input matInput placeholder="City" type="text">
@@ -68,15 +74,9 @@
                                 <mat-form-field class="example-full-width">
                                    <textarea matInput placeholder="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."></textarea>
                                  </mat-form-field>
-                                  <!-- <div class="form-group">
 
-                                      <div class="form-group">
-                                          <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                                          <textarea class="form-control" rows="5"></textarea>
-                                      </div>
-                                  </div> -->
                               </div>
-                          </div>
+                          </div> -->
                           <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update Profile</button>
                           <div class="clearfix"></div>
                       </form>
