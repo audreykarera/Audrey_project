@@ -20,6 +20,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import { AdminDashboardComponent } from './AdminDashboard/AdminDashboard.component';
 import { SharedModule } from 'app/shared/shared.module';
+import { CentreDialogComponent } from './diallogs/centre-dialog/centre-dialog.component';
 
 
 @NgModule({
@@ -46,8 +47,8 @@ import { SharedModule } from 'app/shared/shared.module';
     LearnersComponent,
     CentreComponent,
     SubjectComponent,
-    CourseComponent
-
+    CourseComponent,
+    CentreDialogComponent
   ]
 })
 

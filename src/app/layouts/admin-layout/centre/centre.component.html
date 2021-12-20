@@ -8,10 +8,14 @@
                 <div class="card-header card-header-danger">
                     <h4 class="card-title ">Centres</h4>
                     <p class="card-category"> List of Inspire academy centres</p>
-                    <button class="addbutton" mat-icon-button style="font-size: xx-large"
-                    title="Add Centre">
-                     <mat-icon>add</mat-icon>
-                  </button>   
+
+                    <div class="align-left float-right">
+                        <button class="addbutton" mat-icon-button style="font-size: xx-large" (click)="AddCentre()"
+                        title="Add Centre">
+                         <mat-icon>add</mat-icon>
+                      </button>
+                    </div>
+
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -26,24 +30,24 @@
                                 <th>
                                     Delete
                                 </th>
-        
+
                             </thead>
                             <tbody>
 
-                                <tr >
+                                <tr *ngFor="let center  of centres" >
                                   <td>
-                                    Bisho 1
+                                    {{center.CentreName}}
                                   </td>
                                   <td >
-                                    <button mat-icon-button
+                                    <button mat-icon-button (click)="EditCentre(center)"
                                        title="Edit Centre">
                                         <mat-icon>edit</mat-icon>
                                      </button>
                                   </td>
                                     <td >
-                                      <button mat-icon-button
+                                      <button mat-icon-button (click)="RemoveCourse(center.CentreId)"
                                          title="Delete Centre">
-                                          <mat-icon>delete</mat-icon>
+                                          <mat-icon >delete</mat-icon>
                                        </button>
                                   </td>
                                 </tr>

@@ -10,7 +10,6 @@ export class CourseService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  private isloggedin$: BehaviorSubject<any> = new BehaviorSubject<any>(false);
   readonly BaseURI = 'https://localhost:44318/api/Users';
 
 
