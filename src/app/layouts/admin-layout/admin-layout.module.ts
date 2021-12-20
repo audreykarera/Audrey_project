@@ -1,3 +1,6 @@
+import { CourseComponent } from './course/course.component';
+import { SubjectComponent } from './subject/subject.component';
+import { CentreComponent } from './centre/centre.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -17,6 +20,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import { AdminDashboardComponent } from './AdminDashboard/AdminDashboard.component';
 import { SharedModule } from 'app/shared/shared.module';
+
 
 @NgModule({
   imports: [
@@ -39,7 +43,11 @@ import { SharedModule } from 'app/shared/shared.module';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-    LearnersComponent
+    LearnersComponent,
+    CentreComponent,
+    SubjectComponent,
+    CourseComponent
+
   ]
 })
 
