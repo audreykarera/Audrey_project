@@ -31,4 +31,8 @@ export class CourseService {
     return this.http.get<any[]>(this.BaseURI  + '/myCourses/'+ id);
   }
 
+  getProfile(id: number):  Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURI  + '/getProfile/'+ id);
+  }
+
 }
