@@ -18,6 +18,7 @@ import { SharedModule } from "app/shared/shared.module";
 import { MyCoursesComponent } from "./my-courses/my-courses.component";
 import { RegisterCourseComponent } from "./register-course/register-course.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
+import { DeregisterCourseDialogComponent } from "./modals/deregister-course-dialog/deregister-course-dialog.component";
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import { UserProfileComponent } from "./user-profile/user-profile.component";
     LearnerDashboardComponent,
     MyCoursesComponent,
     RegisterCourseComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    DeregisterCourseDialogComponent
   ],
 })
 export class LearnerLayoutModule {}
