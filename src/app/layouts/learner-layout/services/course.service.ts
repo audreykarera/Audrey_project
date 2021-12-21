@@ -37,4 +37,9 @@ export class CourseService {
     return this.http.get<any[]>(this.BaseURI  + '/getProfile/'+ id);
   }
 
+  UpdateUser(form, id): Observable<any> {
+    return this.http.post(this.BaseURI + '/UpdateUser/'+id, form);
+
+  }
+
 }

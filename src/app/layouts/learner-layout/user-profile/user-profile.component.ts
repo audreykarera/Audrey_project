@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'app/auth/auth.service';
+import { ToastrService } from 'app/services/Toastr.service';
 import { CourseService } from '../services/course.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class UserProfileComponent implements OnInit {
 
   profileModel: FormGroup;
   userTypes: any[] =[];
-  constructor(private auth: AuthService, private courses: CourseService, private fb: FormBuilder) { }
+  constructor(private auth: AuthService, private courses: CourseService, private fb: FormBuilder, private toastr: ToastrService) { }
 
   ngOnInit() {
     const id =  this.auth.getUserID;
@@ -23,13 +24,18 @@ export class UserProfileComponent implements OnInit {
       Username: [{value: '',disabled: true}, Validators.required,],
       FirstName: ['', Validators.required],
       Surname: ['', Validators.required],
-      type: ['', Validators.required],
+      UserTypeId: ['', Validators.required],
       school: ['', Validators.required],
     });
   }
 
   onSubmit() {
+    this.courses.UpdateUser(this.profileModel.value,this.auth.getUserID).subscribe(result =>{
+      console.log(result);
+      this.auth.setUserType(result.UserTypeId)
+      this.toastr.showNotification("successfully updated!",1);
 
+    })
   }
 
   getProfile(id: number) {
@@ -40,7 +46,7 @@ export class UserProfileComponent implements OnInit {
         Username: profile.Username,
         FirstName: profile.FirstName,
         Surname: profile.Surname,
-        type: profile.type,
+        UserTypeId: profile.type,
         school: profile.isAtSchool
       })
 
