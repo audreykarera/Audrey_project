@@ -28,4 +28,7 @@ export class CentreService {
     return this.http.get<any[]>(this.BaseURI  + 'getSpecificCentreStudents/'+id);
   }
 
+  getLearners():  Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURI  + 'getLearners/');
+  }
 }
