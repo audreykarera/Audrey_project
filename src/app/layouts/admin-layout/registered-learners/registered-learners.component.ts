@@ -9,7 +9,7 @@ import { CentreService } from '../services/centre.service';
 export class RegisteredLearnersComponent implements OnInit {
 
   learners: any[] = [];
-
+  public query: any = '';
   constructor(private centreService: CentreService) { }
 
   ngOnInit() {

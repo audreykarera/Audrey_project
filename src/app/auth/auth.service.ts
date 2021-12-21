@@ -47,6 +47,8 @@ export class AuthService {
 
     sessionStorage.removeItem('id');
     sessionStorage.removeItem('rle');
+    sessionStorage.removeItem('typ');
+
     this.setLoggedin(false);
     this.router.navigateByUrl('/login');
   }

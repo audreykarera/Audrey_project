@@ -11,6 +11,7 @@ import Swal from 'sweetalert2'
 })
 export class SubjectComponent implements OnInit {
   subjects: any[] = [];
+  public query: any = '';
 
 
   constructor(private subjectService: SubjectsService, public dialog: MatDialog) { }

@@ -22,6 +22,7 @@ import { CentreDialogComponent } from './diallogs/centre-dialog/centre-dialog.co
 import { SubjectDialogComponent } from './diallogs/subject-dialog/subject-dialog.component';
 import { CourseDialogComponent } from './diallogs/course-dialog/course-dialog.component';
 import { RegisteredLearnersComponent } from './registered-learners/registered-learners.component';
+import { SearchFilterPipe } from './pipe';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { RegisteredLearnersComponent } from './registered-learners/registered-le
     CentreDialogComponent,
     SubjectDialogComponent,
     CourseDialogComponent,
-    RegisteredLearnersComponent
+    RegisteredLearnersComponent,
+    SearchFilterPipe
   ]
 })
 

@@ -12,6 +12,7 @@ import { CourseDialogComponent } from '../diallogs/course-dialog/course-dialog.c
 export class CourseComponent implements OnInit {
 
   courses: any[] = [];
+  public query: any = '';
 
   constructor(public dialog: MatDialog, private CoreServeERD: CoreServe) { }
 
