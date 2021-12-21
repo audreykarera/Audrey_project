@@ -66,6 +66,9 @@ export class CentreComponent implements OnInit {
       CentreDialogComponent,
       dialog
     );
+    dialogReference.afterClosed().subscribe(result => {
+      this.getCentres();
+    })
   }
 
   AddCentre() {
@@ -78,5 +81,8 @@ export class CentreComponent implements OnInit {
       CentreDialogComponent,
       dialog
     );
+    dialogReference.afterClosed().subscribe(result => {
+      this.getCentres();
+    })
   }
 }

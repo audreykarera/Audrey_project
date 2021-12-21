@@ -65,6 +65,9 @@ export class CourseComponent implements OnInit {
       CourseDialogComponent,
       dialog
     );
+    dialogReference.afterClosed().subscribe(result => {
+      this.getCourses();
+    })
   }
 
   AddCourse() {
@@ -77,5 +80,8 @@ export class CourseComponent implements OnInit {
       CourseDialogComponent,
       dialog
     );
+    dialogReference.afterClosed().subscribe(result => {
+      this.getCourses();
+    })
   }
 }

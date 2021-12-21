@@ -54,13 +54,13 @@ console.log(this.auth.getUserID)
                console.log(res)
                if(res.Message === 'centre')
                {
-                 this.toast.showNotification('top','right',"can't register on more than one centre",4);
+                 this.toast.showNotification("can't register on more than one centre",4);
                } else if(res.Message === 'number') {
-                this.toast.showNotification('top','right',"course is full",4);
+                this.toast.showNotification("course is full",4);
 
                }
                else {
-                this.toast.showNotification('top','right',"successfully enrolled in the course",1);
+                this.toast.showNotification("successfully enrolled in the course",1);
 
                }
                this.router.navigateByUrl('../learner/my-courses');

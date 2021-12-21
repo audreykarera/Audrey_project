@@ -6,11 +6,11 @@ declare var $: any;
 export class ToastrService {
 
 constructor() { }
-showNotification(from, align, message, color){
+showNotification( message, color, from?, align?){
   const type = ['','info','success','warning','danger'];
 
   //const color = Math.floor((Math.random() * 4) + 1);
-
+  from =  'top',align = 'right'
   $.notify({
       icon: "notifications",
       message: message

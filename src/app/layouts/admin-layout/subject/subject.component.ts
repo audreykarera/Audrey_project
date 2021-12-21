@@ -37,6 +37,9 @@ export class SubjectComponent implements OnInit {
       SubjectDialogComponent,
       dialog
     );
+    dialogReference.afterClosed().subscribe(result => {
+      this.getSubjects();
+    })
   }
 
   EditSubject(subject) {
@@ -49,6 +52,9 @@ export class SubjectComponent implements OnInit {
       SubjectDialogComponent,
       dialog
     );
+    dialogReference.afterClosed().subscribe(result => {
+      this.getSubjects();
+    })
   }
 
 
