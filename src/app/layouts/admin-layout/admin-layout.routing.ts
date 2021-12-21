@@ -14,26 +14,8 @@ export const AdminLayoutRoutes: Routes = [
     path: "",
     children: [
       {
-        path: "dashboard",
-        component: AdminDashboardComponent,
-      },
-    ],
-  },
-  {
-    path: "",
-    children: [
-      {
-        path: "notifications",
-        component: NotificationsComponent,
-      },
-    ],
-  },
-  {
-    path: "",
-    children: [
-      {
-        path: "learners",
-        component: LearnersComponent,
+        path: "All learners",
+        component: RegisteredLearnersComponent,
       },
     ],
   },
@@ -41,6 +23,6 @@ export const AdminLayoutRoutes: Routes = [
   { path: "courses", component: CourseComponent },
   { path: "subjects", component: SubjectComponent },
   { path: "centres", component: CentreComponent },
-  { path: "registered-learners", component: RegisteredLearnersComponent },
+  { path: "registered-learners", component: LearnersComponent },
 
 ];

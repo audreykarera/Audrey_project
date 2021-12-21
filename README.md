@@ -246,3 +246,8 @@ Instagram: <https://www.instagram.com/CreativeTimOfficial>
 [CHANGELOG]: ./CHANGELOG.md
 
 [version-badge]: https://img.shields.io/badge/version-2.6.0-blue.svg
+
+## Installs
+## npm install
+## npm install --save sweetalert2
+

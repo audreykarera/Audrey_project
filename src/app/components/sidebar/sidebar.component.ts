@@ -17,13 +17,11 @@ export const ROUTES: RouteInfo[] = [
     { path: '/learner/userprofile', title: 'User Profile',  icon:'person', class: '' ,role: 2},
 
     { path: '/admin/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' ,role: 0},
-
-    { path: '/admin/notifications', title: 'Notifications',  icon:'notifications', class: '' ,role: 1},
-    { path: '/admin/learners', title: 'Learners',  icon:'notifications', class: '' ,role: 1},
-    { path: '/admin/courses', title: 'Courses',  icon:'notifications', class: '' ,role: 1},
-    { path: '/admin/subjects', title: 'Subjects',  icon:'notifications', class: '' ,role: 1},
-    { path: '/admin/centres', title: 'Centres',  icon:'notifications', class: '' ,role: 1},
-    { path: '/admin/registered-learners', title: 'Registered Learners',  icon:'notifications', class: '' ,role: 1},
+    { path: '/admin/learners', title: 'Learners',  icon:'people', class: '' ,role: 1},
+    { path: '/admin/courses', title: 'Courses',  icon:'class', class: '' ,role: 1},
+    { path: '/admin/subjects', title: 'Subjects',  icon:'subject', class: '' ,role: 1},
+    { path: '/admin/centres', title: 'Centres',  icon:'place', class: '' ,role: 1},
+    { path: '/admin/registered-learners', title: 'Registered Learners',  icon:'people_outline', class: '' ,role: 1},
 
 ];
 
