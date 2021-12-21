@@ -6,8 +6,6 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminLayoutRoutes } from './admin-layout.routing';
-import { IconsComponent } from './icons/icons.component';
-import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
@@ -21,6 +19,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { AdminDashboardComponent } from './AdminDashboard/AdminDashboard.component';
 import { SharedModule } from 'app/shared/shared.module';
 import { CentreDialogComponent } from './diallogs/centre-dialog/centre-dialog.component';
+import { SubjectDialogComponent } from './diallogs/subject-dialog/subject-dialog.component';
+import { CourseDialogComponent } from './diallogs/course-dialog/course-dialog.component';
 
 
 @NgModule({
@@ -41,14 +41,15 @@ import { CentreDialogComponent } from './diallogs/centre-dialog/centre-dialog.co
   ],
   declarations: [
     AdminDashboardComponent,
-    IconsComponent,
-    MapsComponent,
+    LearnersComponent,
     NotificationsComponent,
     LearnersComponent,
     CentreComponent,
     SubjectComponent,
     CourseComponent,
-    CentreDialogComponent
+    CentreDialogComponent,
+    SubjectDialogComponent,
+    CourseDialogComponent
   ]
 })
 

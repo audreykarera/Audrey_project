@@ -8,10 +8,10 @@
                 <div class="card-header card-header-danger">
                     <h4 class="card-title ">Courses</h4>
                     <p class="card-category"> List of courses offered at Inspire academy</p>
-                    <button class="addbutton" mat-icon-button style="font-size: xx-large"
+                    <button class="addbutton" mat-icon-button style="font-size: xx-large" (click)="AddCourse()"
                     title="Add Course">
                      <mat-icon>add</mat-icon>
-                  </button>   
+                  </button>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -29,31 +29,31 @@
                                 <th>
                                     Delete
                                 </th>
-        
+
                             </thead>
                             <tbody>
 
-                                <tr >
-                                  <td>
-                                    Grade 6 Mathjr
-                                  </td>
-                                  <td>
-                                    Mathjr
-                                  </td>
+                              <tr *ngFor="let course  of courses" >
+                                <td>
+                                  {{course.CourseDesc}}
+                                </td>
+                                <td>
+                                  {{course.Subject}}
+                                </td>
+                                <td >
+                                  <button mat-icon-button (click)="EditCourse(course)"
+                                     title="Edit Centre">
+                                      <mat-icon>edit</mat-icon>
+                                   </button>
+                                </td>
                                   <td >
-                                    <button mat-icon-button
-                                       title="Edit Course">
-                                        <mat-icon>edit</mat-icon>
+                                    <button mat-icon-button (click)="RemoveCourse(course.CourseId)"
+                                       title="Delete Centre">
+                                        <mat-icon >delete</mat-icon>
                                      </button>
-                                  </td>
-                                    <td >
-                                      <button mat-icon-button
-                                         title="Delete Course">
-                                          <mat-icon>delete</mat-icon>
-                                       </button>
-                                  </td>
-                                </tr>
-                            </tbody>
+                                </td>
+                              </tr>
+                          </tbody>
                         </table>
                     </div>
                 </div>

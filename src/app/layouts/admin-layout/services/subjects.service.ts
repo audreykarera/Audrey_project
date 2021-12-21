@@ -15,7 +15,7 @@ export class SubjectsService {
 
 
  getSubjects():  Observable<any[]> {
-  return this.http.get<any[]>(this.BaseURI  + '/getSubjects/');
+  return this.http.get<any[]>(this.BaseURI  + 'getSubjects');
 }
 
 updateSubject(Subject, id: number):  Observable<any> {
@@ -23,10 +23,10 @@ updateSubject(Subject, id: number):  Observable<any> {
 }
 
 AddSubject(Subject):  Observable<any> {
-  return this.http.post(this.BaseURI + '/Create/', Subject);
+  return this.http.post(this.BaseURI + 'CreateSubject/', Subject);
 }
 deleteSubject(id) {
-  return this.http.delete(this.BaseURI + '/CreateSubject/'+id);
+  return this.http.delete(this.BaseURI + 'DeleteSubject/'+id);
 }
 
 }

@@ -13,7 +13,6 @@ export class CentreService {
   readonly BaseURI = 'https://localhost:44318/api/Users/';
 
 
-
   updateCentre(centre, id: number):  Observable<any> {
     return this.http.post(this.BaseURI + 'EditCentre/'+id, centre);
   }
@@ -23,6 +22,10 @@ export class CentreService {
   }
   deleteCentre(id) {
     return this.http.delete(this.BaseURI + '/DeleteCentre/'+id);
+  }
+
+  getSpecificCentreStudents(id: number):  Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURI  + 'getSpecificCentreStudents/'+id);
   }
 
 }

@@ -17,6 +17,9 @@ export class CourseService {
     return this.http.get<any[]>(this.BaseURI  + '/getCourses/'+ id);
   }
 
+  getAllCourses():  Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURI  + '/getAllCourses');
+  }
   getCentres():  Observable<any[]> {
     return this.http.get<any[]>(this.BaseURI  + '/getCentres/');
   }

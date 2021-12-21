@@ -9,10 +9,12 @@
                 <div class="card-header card-header-danger">
                     <h4 class="card-title ">Subject</h4>
                     <p class="card-category"> List of subjects offered at Inspire academy</p>
-                    <button class="addbutton" mat-icon-button style="font-size: xx-large"
+                    <div class="align-left float-right">
+                    <button class="addbutton" mat-icon-button style="font-size: xx-large" (click)="AddSubject()"
                     title="Add Subject">
                      <mat-icon>add</mat-icon>
                   </button>
+                  </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -37,13 +39,13 @@
                                       {{subject.SubjectDesc}}
                                     </td>
                                     <td >
-                                      <button mat-icon-button (click)="EditSubject(center)"
+                                      <button mat-icon-button (click)="EditSubject(subject)"
                                          title="Edit subject">
                                           <mat-icon>edit</mat-icon>
                                        </button>
                                     </td>
                                       <td >
-                                        <button mat-icon-button (click)="RemoveSubject(center.subjectId)"
+                                        <button mat-icon-button (click)="RemoveSubject(subject.SubjectId)"
                                            title="Delete subject">
                                             <mat-icon >delete</mat-icon>
                                          </button>

@@ -1,4 +1,3 @@
-import { MapsComponent } from '../../admin-layout/maps/maps.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DeregisterCourseDialogComponent } from '../modals/deregister-course-dialog/deregister-course-dialog.component';
