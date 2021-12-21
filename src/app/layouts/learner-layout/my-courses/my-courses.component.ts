@@ -26,12 +26,12 @@ export class MyCoursesComponent implements OnInit {
         })
   }
 
-  dialogLogin() {
+  dialogLogin(course) {
     const dialog = new MatDialogConfig;
     dialog.disableClose = false;
     dialog.width = '20rem';
     dialog.height = 'auto';
-    dialog.data = { add: 'yes' }
+    dialog.data = { add: 'yes',course: course}
     const dialogReference = this.dialog.open(
       DeregisterCourseDialogComponent,
       dialog
