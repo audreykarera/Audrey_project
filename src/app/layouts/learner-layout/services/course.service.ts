@@ -10,7 +10,6 @@ export class CourseService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  private isloggedin$: BehaviorSubject<any> = new BehaviorSubject<any>(false);
   readonly BaseURI = 'https://localhost:44318/api/Users';
 
 
@@ -18,6 +17,9 @@ export class CourseService {
     return this.http.get<any[]>(this.BaseURI  + '/getCourses/'+ id);
   }
 
+  getAllCourses():  Observable<any[]> {
+    return this.http.get<any[]>(this.BaseURI  + '/getAllCourses');
+  }
   getCentres():  Observable<any[]> {
     return this.http.get<any[]>(this.BaseURI  + '/getCentres/');
   }

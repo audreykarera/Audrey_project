@@ -17,8 +17,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/learner/userprofile', title: 'User Profile',  icon:'person', class: '' ,role: 2},
 
     { path: '/admin/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' ,role: 0},
-    { path: '/admin/icons', title: 'Icons',  icon:'bubble_chart', class: '' ,role: 1},
-    { path: '/admin/maps', title: 'Maps',  icon:'location_on', class: '' ,role: 1},
+
     { path: '/admin/notifications', title: 'Notifications',  icon:'notifications', class: '' ,role: 1},
     { path: '/admin/learners', title: 'Learners',  icon:'notifications', class: '' ,role: 1},
     { path: '/admin/courses', title: 'Courses',  icon:'notifications', class: '' ,role: 1},
@@ -40,9 +39,9 @@ export class SidebarComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
-     this.menuItems = ROUTES.filter(menuItem => menuItem.role == this.authService.getUserRole);
+    this.menuItems = ROUTES.filter(menuItem => menuItem.role == this.authService.getUserRole);
 
-    //this.menuItems = ROUTES.filter(menuItem => menuItem.role ==1);
+   // this.menuItems = ROUTES.filter(menuItem => menuItem.role ==1);
 
   }
   isMobileMenu() {
