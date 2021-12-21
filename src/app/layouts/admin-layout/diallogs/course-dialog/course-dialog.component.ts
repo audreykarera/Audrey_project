@@ -32,7 +32,6 @@ export class CourseDialogComponent implements OnInit {
   ngOnInit() {
     this.getSubjects()
     const edit = this.data.edit;
-    console.log(this.data);
     this.formCentre = this.fb.group({
       CourseDesc: ["", Validators.required],
       SubjectId: ["", Validators.required],
@@ -71,7 +70,6 @@ export class CourseDialogComponent implements OnInit {
 
   getSubjects() {
     this.subjectsService.getSubjects().subscribe(res => {
-        console.log(res);
         this.subjects = res;
     })
   }
