@@ -13,6 +13,7 @@ import { CentreService } from '../services/centre.service';
 export class CentreComponent implements OnInit {
 
   centres: any[] = [];
+  public query: any = '';
 
   constructor(private coursesService: CourseService,public dialog: MatDialog, private centreService: CentreService) { }
 

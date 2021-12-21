@@ -18,6 +18,9 @@
 
                 </div>
                 <div class="card-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control mb-4" placeholder="Search" [(ngModel)]="query" id="listSearch">
+                      </div>
                     <div class="table-responsive">
                         <table class="table">
                             <thead class=" text-primary">
@@ -34,7 +37,7 @@
                             </thead>
                             <tbody>
 
-                                <tr *ngFor="let center  of centres" >
+                                <tr *ngFor="let center  of centres| filter: query" >
                                   <td>
                                     {{center.CentreName}}
                                   </td>
