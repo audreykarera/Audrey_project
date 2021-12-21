@@ -23,8 +23,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/admin/courses', title: 'Courses',  icon:'notifications', class: '' ,role: 1},
     { path: '/admin/subjects', title: 'Subjects',  icon:'notifications', class: '' ,role: 1},
     { path: '/admin/centres', title: 'Centres',  icon:'notifications', class: '' ,role: 1},
-
-
+    { path: '/admin/registered-learners', title: 'Registered Learners',  icon:'notifications', class: '' ,role: 1},
 
 ];
 

@@ -21,6 +21,7 @@ import { SharedModule } from 'app/shared/shared.module';
 import { CentreDialogComponent } from './diallogs/centre-dialog/centre-dialog.component';
 import { SubjectDialogComponent } from './diallogs/subject-dialog/subject-dialog.component';
 import { CourseDialogComponent } from './diallogs/course-dialog/course-dialog.component';
+import { RegisteredLearnersComponent } from './registered-learners/registered-learners.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { CourseDialogComponent } from './diallogs/course-dialog/course-dialog.co
     CourseComponent,
     CentreDialogComponent,
     SubjectDialogComponent,
-    CourseDialogComponent
+    CourseDialogComponent,
+    RegisteredLearnersComponent
   ]
 })
 
