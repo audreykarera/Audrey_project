@@ -31,4 +31,8 @@ export class CentreService {
   getLearners():  Observable<any[]> {
     return this.http.get<any[]>(this.BaseURI  + 'getLearners/');
   }
+
+  Deregister(CourseCentre):  Observable<any> {
+    return this.http.post(this.BaseURI + 'Deregister/', CourseCentre);
+  }
 }
